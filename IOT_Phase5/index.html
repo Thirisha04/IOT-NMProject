@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Noise Pollution Monitoring using IoT</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ text-align: center;
+ background-color: #f0f0f0;
+ }
+ h1 {
+ color: #0074e4;
+ }
+ #noise-level {
+ font-size: 36px;
+ margin-top: 20px;
+ color: #333;
+ }
+ #check-button {
+ background-color: #0074e4;
+ color: #fff;
+ padding: 10px 20px;
+ border: none;
+ cursor: pointer;
+ border-radius: 5px;
+ }
+ #container {
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ width: 300px;
+ margin: 0 auto;
+ }
+ #hearing-range {
+ max-width: 100%;
+ }
+ </style>
+</head>
+<body>
+ <div id="container">
+ <h1>Noise Pollution Monitoring using IoT</h1>
+ <p>Current Noise Level (dB): <span id="noise-level">---</span></p>
+ <button id="check-button">Check Current Noise Level</button>
+ <img id="hearing-range" src="hearing-range.png" alt="Preferred Hearing Range">
+ </div>
+ <script>
+ // Simulated function to get the current noise level from IoT
+ function getNoiseLevel() {
+ return Math.floor(Math.random() * 100); // Simulated noise level (0-100 dB)
+ }
+ document.getElementById("check-button").addEventListener("click", function() {
+ const noiseLevel = getNoiseLevel();
+ document.getElementById("noise-level").textContent = noiseLevel + " dB";
+ });
+ </script>
+</body>
+</html>
